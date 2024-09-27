@@ -185,22 +185,22 @@ namespace CR.App
                 if (dict.ContainsKey(x))
                 {
                     this.txtRepetitionContext.AppendText($"数据【{x}】重复了 \r\n");
-                    dict[x]++;
+                    dict[x.Trim()]++;
                 }
                 else
                 {
-                    dict.Add(x, 1);
+                    dict.Add(x.Trim(), 0);
                 }
             });
 
             this.txtRepetitionContext.AppendText($"总计: \r\n");
 
-            var sumUpData = dict.Where(x => x.Value > 1);
+            var sumUpData = dict.Where(x => x.Value > 0);
             if (sumUpData.Any())
             {
                 foreach (var x in sumUpData)
                 {
-                    this.txtRepetitionContext.AppendText($"数据【{x.Key}】重复了【{x.Value - 1}】次 \r\n");
+                    this.txtRepetitionContext.AppendText($"数据【{x.Key}】重复了【{x.Value}】次 \r\n");
                 }
             }
             else

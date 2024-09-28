@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMain));
             panel1 = new Panel();
             panel3 = new Panel();
             panel5 = new Panel();
@@ -214,6 +215,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(961, 550);
             Controls.Add(panel1);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "FrmMain";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "FrmMain";
